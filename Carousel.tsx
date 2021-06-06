@@ -1,15 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
-const data = [{}, {}, {}, {}];
+interface Props {
+  content: any[]
+  ItemComponent: React.ComponentType<any>
+}
 
-export default function Carousel() {
-
+export default function Carousel(props:Props) {
+  const {ItemComponent,content} = props;
 
   const renderHeader = () => {
     return (
-      <View style={{ height: 50, width: "100%", justifyContent: "center" }}>
+      <View style={{ height: 50, width: "100%", justifyContent: "center", }}>
         <Text>carlos</Text>
       </View>
     )
@@ -24,12 +27,7 @@ export default function Carousel() {
 
   const renderItem = (item) => {
     return (
-      <View style={{height: 150, width: 100, backgroundColor: "orange", justifyContent: "flex-start", alignItems: "center"}}>
-        <View style={{ height: 90, width: 90, backgroundColor: "red" }}/>
-        <Text>
-          mac donal
-        </Text>
-      </View>
+      <ItemComponent/>
     )
   }
 
@@ -42,7 +40,7 @@ export default function Carousel() {
           return key
         }}
         renderItem={renderItem}
-        data={data}
+        data={content}
         horizontal
         ItemSeparatorComponent={renderSeparator}
       />

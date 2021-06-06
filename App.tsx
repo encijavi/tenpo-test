@@ -2,10 +2,13 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Carousel from "./Carousel";
+import HomeContentContainer from './HomeContentContainer';
+
 
 const data = [{}, {}, {}, {}];
 
 export default function App() {
+
 
   return (
     <View style={styles.container}>
@@ -24,15 +27,7 @@ export default function App() {
         </Text>
       </View>
       
-      <View style={styles.carouselContainer}>
-        <Carousel />
-      </View>
-      <View style={styles.carouselContainer}>
-        <Carousel />
-      </View>
-      <View style={styles.carouselContainer}>
-        <Carousel />
-      </View>
+      <HomeContentContainer/>
       </ScrollView>
     </View>
   );
