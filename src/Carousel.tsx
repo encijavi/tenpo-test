@@ -3,17 +3,18 @@ import React, { ReactNode } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 
 interface Props {
-  content: any[]
+  content: any[],
+  title: string,
   ItemComponent: React.ComponentType<any>
 }
 
-export default function Carousel(props:Props) {
-  const {ItemComponent,content} = props;
+export default function Carousel(props: Props) {
+  const { ItemComponent, content, title } = props;
 
   const renderHeader = () => {
     return (
-      <View style={{ height: 50, width: "100%", justifyContent: "center", }}>
-        <Text>carlos</Text>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>{title}</Text>
       </View>
     )
   }
@@ -25,21 +26,12 @@ export default function Carousel(props:Props) {
     )
   }
 
-  const renderItem = (item) => {
-    return (
-      <ItemComponent/>
-    )
-  }
-
   return (
     <View style={styles.container}>
       {renderHeader()}
       <FlatList
-        keyExtractor={(item) => {
-          const key = Math.random().toString()
-          return key
-        }}
-        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <ItemComponent resto={item} />}
         data={content}
         horizontal
         ItemSeparatorComponent={renderSeparator}
@@ -55,4 +47,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  titleContainer: {
+    height: 50,
+    width: "100%",
+    justifyContent: "center"
+  },
+  title: {
+    fontSize: 18,
+    fontFamily: "Gotham-Bold"
+  }
 });

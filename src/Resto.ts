@@ -1,17 +1,20 @@
-export default class Resto{
+import GenericModel from "./GenericModel";
+
+export default class Resto extends GenericModel{
     name: string;
-    restoName: string;
     rating: number;
-    timeAprox: number;
+    timeAproxMin: number;
+    timeAproxMax: number;
     logoImageUrl: string;    
     discount?: number;
 
     constructor(object:any){
+        super(object);
         this.name = object.name
         this.discount = object.discount;
         this.logoImageUrl = object.logoImageUrl;
-        this.restoName = object.restoName;
         this.rating = object.rating;
-        this.timeAprox = object.timeAprox;
+        this.timeAproxMin = object.timeAproxMin;
+        this.timeAproxMax = object.timeAproxMax;
     }
 }

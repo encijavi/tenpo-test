@@ -9,6 +9,11 @@ import FavoriteService from "./FavoriteService"
 import RestoCarouselItem from './RestoCarouselItem';
 import RestoService from "./RestoService"
 
+const carousels = {
+  resto: "RESTAURANTES",
+  category: "CATEGORIAS",
+  favorites: "TUS FAVORITOS"
+}
 
 export default function HomeContentContainer() {
 
@@ -16,34 +21,38 @@ export default function HomeContentContainer() {
   const [restos, setRestos] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
-  useEffect(()=> {
-   CategoryService.getCategories().then(setCategories)
-  },[])
+  useEffect(() => {
+    CategoryService.getCategories().then(setCategories)
+  }, [])
 
-  useEffect(()=> {
+  useEffect(() => {
     RestoService.getRestos().then(setRestos)
-   },[])
+  }, [])
 
-   useEffect(()=> {
+  useEffect(() => {
     FavoriteService.getFavorites().then(setFavorites)
-   },[])
+  }, [])
 
   return (
-    <View style={styles.container}>      
+    <View style={styles.container}>
       <View style={styles.carouselContainer}>
-        <Carousel 
+        <Carousel
+          title={carousels.resto}
+          content={restos}
+          ItemComponent={RestoCarouselItem}
+        />
+
+      </View>
+      <View style={styles.carouselContainer}>
+        <Carousel
+          title={carousels.category}
           content={categories}
           ItemComponent={CategoryCarouselItem}
         />
       </View>
       <View style={styles.carouselContainer}>
-        <Carousel 
-          content={restos}
-          ItemComponent={RestoCarouselItem}
-        />
-      </View>
-      <View style={styles.carouselContainer}>
-        <Carousel 
+        <Carousel
+          title={carousels.favorites}
           content={favorites}
           ItemComponent={FavoriteCarouselItem}
         />
