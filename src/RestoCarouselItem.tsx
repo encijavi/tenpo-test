@@ -7,11 +7,11 @@ const text = {
   discount: "DCTO"
 }
 interface Props {
-  resto: Resto
+  item: Resto
 }
 
 export default function RestoCarouselItem(props: Props) {
-  const { resto } = props;
+  const resto  = props.item;
   const rating = Math.floor(resto.rating)
 
   return (
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     height: 180,
     width: 100,
     justifyContent: "flex-start",
-    alignItems: "center"
+    alignItems: "center",
   },
   logoImageContainer: {
     height: 100,

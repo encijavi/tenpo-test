@@ -35,7 +35,7 @@ export default function HomeContentContainer() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.carouselContainer}>
+      <View style={styles.restoCarouselContainer}>
         <Carousel
           title={carousels.resto}
           content={restos}
@@ -43,14 +43,14 @@ export default function HomeContentContainer() {
         />
 
       </View>
-      <View style={styles.carouselContainer}>
+      <View style={styles.categoryCarouselContainer}>
         <Carousel
           title={carousels.category}
           content={categories}
           ItemComponent={CategoryCarouselItem}
         />
       </View>
-      <View style={styles.carouselContainer}>
+      <View style={styles.favoritesCarouselContainer}>
         <Carousel
           title={carousels.favorites}
           content={favorites}
@@ -68,8 +68,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  carouselContainer: {
+  restoCarouselContainer: {
+    //maybe children should be responsible for height
     height: 200,
+    margin: 10
+  },
+  categoryCarouselContainer: {
+    //maybe children should be responsible for height
+    height: 130,
+    margin: 10
+  },
+  favoritesCarouselContainer: {
+    //maybe children should be responsible for height
+    height: 150,
     margin: 10
   },
   topContainer: {

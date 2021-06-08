@@ -31,7 +31,7 @@ export default function Carousel(props: Props) {
       {renderHeader()}
       <FlatList
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <ItemComponent resto={item} />}
+        renderItem={({ item }) => <ItemComponent item={item} />}
         data={content}
         horizontal
         ItemSeparatorComponent={renderSeparator}
@@ -42,10 +42,11 @@ export default function Carousel(props: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
+    
+    //add dimension
   },
   titleContainer: {
     height: 50,
