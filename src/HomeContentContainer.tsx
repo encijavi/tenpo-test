@@ -77,7 +77,6 @@ const styles = StyleSheet.create({
     margin: 10
   },
   favoritesCarouselContainer: {
-    //maybe children should be responsible for height
     flex:1
   },
   topContainer: {

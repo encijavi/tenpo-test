@@ -1,68 +1,46 @@
+import { useFonts } from 'expo-font';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
-import Carousel from "./Carousel";
-import HomeContentContainer from './HomeContentContainer';
+import AppLoading from 'expo-app-loading';
+import Carousel from "./src/Carousel";
+import HomeContentContainer from './src/HomeContentContainer';
+import HomeTopView from './src/HomeTopView';
+import globals from './globals';
 
 
 const data = [{}, {}, {}, {}];
 
 export default function App() {
 
+  let [fontsLoaded] = useFonts({
+    'Gotham-Bold': globals.fonts.gothamBold,
+    'Gotham-Light': globals.fonts.gothamLight,
+    'Gotham-Book': globals.fonts.gothamBook,
+    'Roboto-Regular': globals.fonts.robotoRegular,
+    'Roboto-Thin': globals.fonts.robotoThin,
+    'Roboto-Light': globals.fonts.robotoLight,
+    'Roboto-Bold': globals.fonts.robotoBold,
+  });
 
-  return (
-    <View style={styles.container}>
-      <ScrollView>
-      <View style={styles.topContainer}>
-        <View style={styles.titleContainer}>
-          <Text>tenpo eats</Text>
-        </View>
-        <View style={styles.titleImageContainer}>
-          <Text>manito</Text>
-        </View>
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
+    return (
+      <View style={styles.container}>
+        <ScrollView>
+          <HomeTopView />
+          <HomeContentContainer />
+        </ScrollView>
       </View>
-      <View style={styles.midContainer}>
-        <Text>
-          Agregar direccion de entrega
-        </Text>
-      </View>
-      
-      <HomeContentContainer/>
-      </ScrollView>
-    </View>
-  );
+    );
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'blue',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  carouselContainer: {
-    height: 200,
-    margin: 10
-  },
-  topContainer: {
-    height: 300,
-    flexDirection: "row"
-  },
-  titleImageContainer: {
-    flex: 2,
-    backgroundColor: 'green',
-    justifyContent: 'center'
-  },
-  titleContainer: {
-    flex: 2,
-    backgroundColor: 'yellow',
-    justifyContent: 'center'
-  },
-  midContainer: {
-    height: 100,
-    width: "100%",
-    backgroundColor: 'lightblue',
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
 });

@@ -1,49 +1,37 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { FlatList, StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
+import { FlatList, StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity } from 'react-native';
+import constants from '../constants';
 import globals from '../globals';
 import Favorite from './Favorite';
+import MealAndChain from './MealAndChain';
 import Rating from './Rating';
 import TimeAproximate from './TimeAproximate';
-
+import CardMealAndChainImage from './CardMealAndChainImage';
 interface Props {
   item: Favorite
 }
+
+export const cardContainerWidth = constants.dimensions.WINDOW_WIDTH * 0.78;
+export const cardContainerHeight = constants.dimensions.WINDOW_HEIGHT * 0.24;
 
 export default function FavoriteCarouselItem(props: Props) {
   const favorite = props.item;
 
   return (
-
     <View style={styles.container}>
-      <View style={styles.cardContainer}>
-        <ImageBackground style={styles.background} imageStyle={styles.backgroundImage} source={favorite.mealImageSource} resizeMode="contain">
-          <Image
-            style={styles.logoImage}
-            source={favorite.logoImageSource}
-            resizeMode="contain"
-          />
-          <Image
-            resizeMode= "stretch"
-            style={styles.rectangle2}
-            source={globals.images.ui.rectangle2}
-          />
-        </ImageBackground>
+      <TouchableOpacity activeOpacity={0.7} style={styles.cardContainer}>
+        <CardMealAndChainImage mealImageSource={favorite.mealImageSource} logoImageSource={favorite.logoImageSource} />
         <View style={styles.detailContainer}>
           <View style={styles.leftDetailContainer}>
-            <Text style={styles.mealName}>
-              {favorite.mealName}
-            </Text>
-            <Text style={styles.chainName}>
-              {favorite.chainName}
-            </Text>
+            <MealAndChain mealName={favorite.mealName} chainName={favorite.chainName}/>
           </View>
           <View style={styles.rightDetailContainer}>
             <Rating rating={favorite.rating} />
             <TimeAproximate max={favorite.timeAproxMax} min={favorite.timeAproxMin} />
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     </View>
   )
 }
@@ -52,50 +40,39 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    width: 280,
-    height: 155,
+    width: cardContainerWidth,
+    height: cardContainerHeight,
   },
   cardContainer: {
     backgroundColor: "white",
-    borderRadius: 10,
-    elevation: 15,
-    width: 265,
-    height: 155,
+    borderRadius: 15,
+    elevation: 10,
+    width: "95%",
+    height: "85%",
   },
-  detailContainer: {
-    flex: 1,
-    width: "100%",
-    flexDirection: "row",
-  },
-  rightDetailContainer: {
-    alignItems: "flex-end",
-    justifyContent: 'center'
-  },
-  leftDetailContainer: {
-    marginLeft: 5,
-    alignItems: "flex-start",
-    justifyContent: 'center'
-  },
-  mealName: {
-    fontSize: 13,
-    color: "black",
-    fontFamily: "Gotham-Book"
-  },
-  chainName: {
-    fontSize: 14,
-    color: globals.colors.primary,
-    fontFamily: "Gotham-Bold"
-  },
-  background: {
-    marginTop: -10,
-    height: 110,
-    width: "100%",
+  backgroundContainer: {
+    flex:4,
     flexDirection: "row",
     justifyContent: "space-between",
   },
   backgroundImage: {
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15
+    flex:1,
+    borderTopLeftRadius: 9,
+    borderTopRightRadius: 9,
+  },
+  detailContainer: {
+    flex: 2,
+    flexDirection: "row",
+    marginHorizontal: 5
+  },
+  rightDetailContainer: {
+    alignItems: "flex-end",
+    justifyContent: 'center',
+    flex: 2,
+  },
+  leftDetailContainer: {
+    flex: 7,
+    justifyContent: 'center'
   },
   logoImage: {
     height: 40,

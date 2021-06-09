@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { ReactNode } from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
+import constants from '../constants';
 
 interface Props {
   content: any[],
@@ -11,13 +12,6 @@ interface Props {
 export default function Carousel(props: Props) {
   const { ItemComponent, content, title } = props;
 
-  const renderHeader = () => {
-    return (
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>{title}</Text>
-      </View>
-    )
-  }
 
   const renderSeparator = (item) => {
     return (
@@ -28,7 +22,9 @@ export default function Carousel(props: Props) {
 
   return (
     <View style={styles.container}>
-      {renderHeader()}
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>{title}</Text>
+      </View>
       <FlatList
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <ItemComponent item={item} />}
@@ -42,15 +38,12 @@ export default function Carousel(props: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
-    alignItems: 'center',
     justifyContent: 'center',
-    //add dimension
   },
   titleContainer: {
-    height: 40,
-    width: "100%",
-    justifyContent: "center"
+    height: constants.dimensions.WINDOW_HEIGHT * 0.05,
+    justifyContent: "center",
+    marginHorizontal: 10
   },
   title: {
     fontSize: 18,
