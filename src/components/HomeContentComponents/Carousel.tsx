@@ -11,7 +11,6 @@ interface Props {
 export default function Carousel(props: Props) {
   const { ItemComponent, content, title } = props;
 
-
   const renderSeparator = (item) => {
     return (
       <View style={{ height: 1, width: 1}}>

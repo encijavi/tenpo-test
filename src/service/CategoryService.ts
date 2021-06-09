@@ -3,17 +3,17 @@ import Category from "../model/Category"
 
 const cates:Category[] = [
     {
-        id: 1,
+        id: "1C",
         name: "HAMBURGUESAS",
         imageSource: globals.images.cagetory.hamburger
     },
     {
-        id: 2,
+        id: "2C",
         name: "ITALIANA",
         imageSource: globals.images.cagetory.italian
     },
     {
-        id: 3,
+        id: "3C",
         name: "PIZZAS",
         imageSource: globals.images.cagetory.pizza
     },

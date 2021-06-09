@@ -3,7 +3,7 @@ import Favorite from "../model/Favorite";
 
 const favs:Favorite[] = [
     {
-        id: 1,
+        id: "1F",
         mealName: "Combo Hamburguesa Big Mac",
         chainName: "McDonalds",
         rating: 3.5,
@@ -13,7 +13,7 @@ const favs:Favorite[] = [
         logoImageSource: globals.images.chainLogo.mcdonalds,
     },
     {
-        id: 2,
+        id: "2F",
         mealName: "Pizza Mediana",
         chainName: "MELT pizzas",
         rating: 3.5,

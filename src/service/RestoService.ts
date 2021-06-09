@@ -3,7 +3,7 @@ import Resto from "../model/Resto";
 
 const restos:Resto[] = [
     {
-        id: 1,
+        id: "1R",
         name: "McDonalds",
         rating: 3.5,
         timeAproxMin: 10,
@@ -12,7 +12,7 @@ const restos:Resto[] = [
         logoImageSource: globals.images.chainLogo.mcdonalds
     },
     {
-        id: 2,
+        id: "2R",
         name: "MELT pizzas",
         rating: 4.5,
         timeAproxMin: 10,
@@ -21,7 +21,7 @@ const restos:Resto[] = [
         logoImageSource: globals.images.chainLogo.melt
     },
     {
-        id: 3,
+        id: "3R",
         name: "YOKONO",
         rating: 3.5,
         timeAproxMin: 10,
@@ -30,7 +30,7 @@ const restos:Resto[] = [
         logoImageSource: globals.images.chainLogo.yokono
     },
     {
-        id: 4,
+        id: "4R",
         name: "Papa John's",
         rating: 4.1,
         timeAproxMin: 10,
