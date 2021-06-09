@@ -1,15 +1,12 @@
 import { useFonts } from 'expo-font';
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { StatusBar, ScrollView, StyleSheet,  View } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import Carousel from "./src/Carousel";
 import HomeContentContainer from './src/HomeContentContainer';
 import HomeTopView from './src/HomeTopView';
 import globals from './globals';
 
-
-const data = [{}, {}, {}, {}];
 
 export default function App() {
 
@@ -28,6 +25,7 @@ export default function App() {
   } else {
     return (
       <View style={styles.container}>
+        <View style={styles.statusBar}/>
         <ScrollView>
           <HomeTopView />
           <HomeContentContainer />
@@ -43,4 +41,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  statusBar:{
+    height: StatusBar.currentHeight
+  }
 });

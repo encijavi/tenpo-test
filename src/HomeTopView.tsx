@@ -2,35 +2,21 @@ import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import globals from '../globals';
 import AddDirectionButton from './AddDirectionButton';
+import HomeHeader from './HomeHeader';
+import HomeMainImage from './HomeMainImage';
 import HomeTitle from './HomeTitle';
 
 export default function HomeTopView() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.headerContainer}>
-        <View style={styles.userIconContainer}>
-          <Image source={globals.images.ui.userIcon} style={styles.userHead} />
-        </View>
-        <View style={styles.searchIconContainer}>
-          <Image source={globals.images.ui.searchIcon} style={styles.searchIcon} />
-        </View>
-      </View>
+      <HomeHeader/>
       <View style={styles.topContainer}>
         <View style={styles.titleContainer}>
           <HomeTitle />
         </View>
 
-
-
-        <View style={styles.titleImageContainer}>
-          <Image source={globals.images.ui.handImage} style={styles.titleMainImageContainer} />
-          <View style={styles.titleImageLeftContainer}>
-            <Image source={globals.images.ui.dotsIcon} style={styles.dotsIcon} />
-          </View>
-
-
-        </View>
+        <HomeMainImage/>
       </View>
 
       <View style={styles.greenBorder}/>
@@ -46,15 +32,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: globals.colors.grey,
   },
-  headerContainer: {
-    width: "100%",
-    flexDirection: "row",
-    marginTop:10
-  },
-  userHead: {
-    height: 50,
-    width: 50,
-  },
+
   greenBorder: {
     width: "100%",
     height: 20,
@@ -98,36 +76,13 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
   },
-  searchIconContainer:{
-    flex:2,
-    justifyContent: 'center',
-    alignItems: "flex-end"
-
-  },
-  userIconContainer:{
-    justifyContent: 'center',
-    flex:2,
-    marginLeft: 8,
-  },
-  searchIcon: {
-    height: 24,
-    width: 24,
-    marginRight: 15
-  },
   dotsIcon: {
     height: 6,
     width: 28,
     marginBottom: 15
   },
   titleMainImageContainer: {
-
     width: 112,
     height: 181,
   },
-  addDirection: {
-    marginLeft: 10,
-    fontSize: 17,
-    fontFamily: "Gotham-Light",
-    color: globals.colors.primary
-  }
 });
