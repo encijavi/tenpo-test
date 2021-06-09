@@ -41,7 +41,6 @@ export default function HomeContentContainer() {
           content={restos}
           ItemComponent={RestoCarouselItem}
         />
-
       </View>
       <View style={styles.categoryCarouselContainer}>
         <Carousel
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   restoCarouselContainer: {
     //maybe children should be responsible for height

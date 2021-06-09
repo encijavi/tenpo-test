@@ -1,37 +1,40 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import globals from '../globals';
+import AddDirectionButton from './AddDirectionButton';
+import HomeTitle from './HomeTitle';
 
 export default function HomeTopView() {
 
   return (
     <View style={styles.container}>
+      <View style={styles.headerContainer}>
+        <View style={styles.userIconContainer}>
+          <Image source={globals.images.ui.userIcon} style={styles.userHead} />
+        </View>
+        <View style={styles.searchIconContainer}>
+          <Image source={globals.images.ui.searchIcon} style={styles.searchIcon} />
+        </View>
+      </View>
       <View style={styles.topContainer}>
         <View style={styles.titleContainer}>
-          <View style={styles.userHeadContainer}>
-            <View style={styles.userHead}/> 
-          </View>          
-          <Text style={styles.title}>Tenpo</Text>
-          <Text style={styles.title}>Eats</Text>
-          <Text style={styles.subtitle}>DELIVER APP</Text>
+          <HomeTitle />
         </View>
+
+
+
         <View style={styles.titleImageContainer}>
-        <View style={styles.searchIconContainer}>
-            <View style={styles.searchIcon}/> 
-          </View>   
-          <View style={styles.titleMainImageContainer}>
-            <View>
-
-            </View>
-          </View>     
+          <Image source={globals.images.ui.handImage} style={styles.titleMainImageContainer} />
+          <View style={styles.titleImageLeftContainer}>
+            <Image source={globals.images.ui.dotsIcon} style={styles.dotsIcon} />
+          </View>
 
 
         </View>
       </View>
-      <View style={styles.midContainer}>
-        <Text style={styles.addDirection}>
-          Agregar direccion de entrega
-        </Text>
-      </View>
+
+      <View style={styles.greenBorder}/>
+      <AddDirectionButton />
     </View>
   );
 }
@@ -41,71 +44,90 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: globals.colors.grey,
   },
-  userHeadContainer:{
-    width: "100%"
+  headerContainer: {
+    width: "100%",
+    flexDirection: "row",
+    marginTop:10
   },
-  userHead:{
-    marginLeft: 10,
-    backgroundColor: "grey",
-    borderRadius: 2,
+  userHead: {
     height: 50,
-    width: 50
+    width: 50,
   },
-  title:{
-    fontSize: 42  ,
-    textAlign: 'left'
-  },
-  subtitle:{
-    fontSize: 15,
-    letterSpacing: 4,
-    textAlign: 'left'
-  },
-  carouselContainer: {
-    height: 200,
-    margin: 10
-  },
+  greenBorder: {
+    width: "100%",
+    height: 20,
+    backgroundColor: globals.colors.secondary,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+  },  
   topContainer: {
-    height: 256,
+    height: 200,
     flexDirection: "row"
   },
   titleImageContainer: {
     flex: 2,
-    backgroundColor: 'green',
-    justifyContent: 'center'
+    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'flex-end'
+  },
+  titleImageLeftContainer: {
+    height: "100%",
+    justifyContent: 'flex-end'
   },
   titleContainer: {
     flex: 2,
-    backgroundColor: 'yellow',
+    //backgroundColor: 'yellow',
     justifyContent: 'center'
   },
   midContainer: {
     height: 80,
     width: "100%",
-    backgroundColor: 'lightblue',
-    justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: globals.colors.secondary,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: 'center',
   },
-  searchIconContainer:{
-    position: "absolute",
-    top: 40,
-    right: 15,
-    width: 24,
-    height: 24,
-    backgroundColor: "black",
-  },
-  searchIcon:{
-
-  },  
-  titleMainImageContainer:{
+  whiteBorder: {
     position: "absolute",
     bottom: 0,
-    left: 15,
+    width: "100%",
+    height: 20,
+    backgroundColor: "white",
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+  },
+  searchIconContainer:{
+    flex:2,
+    justifyContent: 'center',
+    alignItems: "flex-end"
+
+  },
+  userIconContainer:{
+    justifyContent: 'center',
+    flex:2,
+    marginLeft: 8,
+  },
+  searchIcon: {
+    height: 24,
+    width: 24,
+    marginRight: 15
+  },
+  dotsIcon: {
+    height: 6,
+    width: 28,
+    marginBottom: 15
+  },
+  titleMainImageContainer: {
+
     width: 112,
     height: 181,
-    backgroundColor: "black",
   },
-  addDirection:{
+  addDirection: {
+    marginLeft: 10,
     fontSize: 17,
+    fontFamily: "Gotham-Light",
+    color: globals.colors.primary
   }
 });
