@@ -1,7 +1,9 @@
 import React from 'react';
 import { StyleSheet, Image, Text, View } from 'react-native';
 import globals from '../globals';
+import Rating from './Rating';
 import Resto from './Resto';
+import TimeAproximate from './TimeAproximate';
 
 const text = {
   discount: "DCTO"
@@ -19,7 +21,7 @@ export default function RestoCarouselItem(props: Props) {
       <View style={styles.logoImageContainer}>
         <Image 
           style={styles.logoImage} 
-          source={{ uri: resto.logoImageUrl }}
+          source={resto.logoImageSource}
         />
         <View style={styles.discountContainer}>
           <Text style={styles.discountPercentage}>
@@ -31,18 +33,8 @@ export default function RestoCarouselItem(props: Props) {
         {resto.name}
       </Text>
       <View style={styles.detailContainer}>
-        <View style={styles.ratingContainer}>
-          <Image 
-            style={styles.star} 
-            source={globals.images.star[rating]} 
-          />
-          <Text style={styles.rating}>
-            {resto.rating}
-          </Text>
-        </View>
-        <Text style={styles.timeAprox}>
-          {`${resto.timeAproxMin}-${resto.timeAproxMax} min.`}
-        </Text>
+        <Rating rating={resto.rating}/>
+        <TimeAproximate max={resto.timeAproxMax} min={resto.timeAproxMin}/>
       </View>
     </View>
   )

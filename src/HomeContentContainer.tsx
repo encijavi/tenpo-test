@@ -64,7 +64,6 @@ export default function HomeContentContainer() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'blue',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -80,8 +79,7 @@ const styles = StyleSheet.create({
   },
   favoritesCarouselContainer: {
     //maybe children should be responsible for height
-    height: 150,
-    margin: 10
+    flex:1
   },
   topContainer: {
     height: 300,

@@ -21,7 +21,7 @@ export default function Carousel(props: Props) {
 
   const renderSeparator = (item) => {
     return (
-      <View style={{ height: 1, width: 1, borderRadius: 1 }}>
+      <View style={{ height: 1, width: 10}}>
       </View>
     )
   }
@@ -45,11 +45,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
-    
     //add dimension
   },
   titleContainer: {
-    height: 50,
+    height: 40,
     width: "100%",
     justifyContent: "center"
   },

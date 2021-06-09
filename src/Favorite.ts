@@ -1,17 +1,22 @@
-export default class Favorite{
-    name: string;
-    restoName: string;
-    rating: number;
-    timeAprox: number;
-    backgroundImageUrl: string;
-    logoImageUrl: string;    
+import GenericModel from "./GenericModel";
 
-    constructor(object:any){
-        this.name = object.name
-        this.backgroundImageUrl = object.backgroundImageUrl;
-        this.logoImageUrl = object.logoImageUrl;
-        this.restoName = object.restoName;
-        this.rating = object.rating;
-        this.timeAprox = object.timeAprox;
-    }
+export default class Favorite extends GenericModel {
+    mealName: string;
+    chainName: string;
+    rating: number;
+    timeAproxMin: number;
+    timeAproxMax: number;
+    mealImageSource: string;
+    logoImageSource: string;    
+    
+        constructor(object: any){
+            super(object);
+            this.mealName = object.mealName;
+            this.logoImageSource = object.logoImageSource;
+            this.mealImageSource = object.mealImageSource;
+            this.chainName = object.chainName;
+            this.rating = object.rating;
+            this.timeAproxMin = object.timeAproxMin;
+            this.timeAproxMax = object.timeAproxMax;
+        }
 }

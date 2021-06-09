@@ -5,14 +5,14 @@ export default class Resto extends GenericModel{
     rating: number;
     timeAproxMin: number;
     timeAproxMax: number;
-    logoImageUrl: string;    
+    logoImageSource: string;    
     discount?: number;
 
     constructor(object:any){
         super(object);
         this.name = object.name
         this.discount = object.discount;
-        this.logoImageUrl = object.logoImageUrl;
+        this.logoImageSource = object.logoImageSource;
         this.rating = object.rating;
         this.timeAproxMin = object.timeAproxMin;
         this.timeAproxMax = object.timeAproxMax;

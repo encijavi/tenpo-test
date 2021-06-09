@@ -39,7 +39,6 @@ export default function HomeTopView() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'blue',
     alignItems: 'center',
     justifyContent: 'center',
   },
