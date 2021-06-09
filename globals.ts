@@ -22,9 +22,9 @@ const globals = {
             papajohns: require("./assets/731eaa270fdd54c51d2c0f94250504bf.png"),
         },
         cagetory: {
-            pizza: require("./assets/fatima-akram-uU0Anw-8Vsg-unsplash.png"),
-            hamburger: require("./assets/filipe-de-rodrigues-SpMmd2jgL2w-unsplash.png"),
-            italian: require("./assets/sestrjevitovschii-ina-7zfQ6sbWVyE-unsplash.png")                
+            pizza: require("./assets/fatima-akram-uU0Anw-8Vsg-unsplash3x.png"),
+            hamburger: require("./assets/c5eff21c2ef7d111ac94f9183cde0a3b3x.png"),
+            italian: require("./assets/sestrjevitovschii-ina-7zfQ6sbWVyE-unsplash3x.png")
         },
         favorites: {
             pizza: require("./assets/ba91958b61f9de5ca0698dd4d48ac2092x.png"),

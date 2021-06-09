@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
-import constants from '../constants';
+import dimensions from '../constants';
 
 interface Props {
   content: any[],
@@ -14,7 +14,7 @@ export default function Carousel(props: Props) {
 
   const renderSeparator = (item) => {
     return (
-      <View style={{ height: 1, width: 10}}>
+      <View style={{ height: 1, width: 1}}>
       </View>
     )
   }
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   titleContainer: {
-    height: constants.dimensions.WINDOW_HEIGHT * 0.05,
+    height: dimensions.WINDOW_HEIGHT * 0.05,
     justifyContent: "center",
     marginHorizontal: 10
   },

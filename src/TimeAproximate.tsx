@@ -25,7 +25,7 @@ export default function TimeAproximate(props: Props) {
 const styles = StyleSheet.create({
   timeAprox: {
     fontSize: 11,
-    fontFamily: "Gotham-Light",
+    fontFamily: "Gotham-Book",
     marginTop: 2
   }
 });

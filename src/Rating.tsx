@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Image, Text, View } from 'react-native';
+import dimensions from '../constants';
 import globals from '../globals';
 import Resto from './Resto';
 
@@ -34,11 +35,11 @@ const styles = StyleSheet.create({
   },
   rating: {
     fontSize: 14,
-    fontFamily: "Gotham-Light",
+    fontFamily: "Gotham-Book",
   },
   star: {
-    height: 10,
-    width: 10,
+    height: dimensions.favoriteItemContainerHeight * 0.05,
+    width: dimensions.favoriteItemContainerWidth * 0.038,
     margin: 1
   }
 });

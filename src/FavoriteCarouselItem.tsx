@@ -8,12 +8,12 @@ import MealAndChain from './MealAndChain';
 import Rating from './Rating';
 import TimeAproximate from './TimeAproximate';
 import CardMealAndChainImage from './CardMealAndChainImage';
+import dimensions from '../constants';
 interface Props {
   item: Favorite
 }
 
-export const cardContainerWidth = constants.dimensions.WINDOW_WIDTH * 0.78;
-export const cardContainerHeight = constants.dimensions.WINDOW_HEIGHT * 0.24;
+
 
 export default function FavoriteCarouselItem(props: Props) {
   const favorite = props.item;
@@ -39,8 +39,8 @@ export default function FavoriteCarouselItem(props: Props) {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    width: cardContainerWidth,
-    height: cardContainerHeight,
+    width: dimensions.favoriteItemContainerWidth,
+    height: dimensions.favoriteItemContainerHeight,
   },
   cardContainer: {
     backgroundColor: "white",

@@ -6,7 +6,7 @@ export default class Resto extends GenericModel{
     timeAproxMin: number;
     timeAproxMax: number;
     logoImageSource: string;    
-    discount?: number;
+    discount: number;
 
     constructor(object:any){
         super(object);

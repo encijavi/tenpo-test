@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
-import constants from '../constants';
+import dimensions from '../constants';
 import Category from './Category';
 
 interface Props {
   item: Category
 }
 
-const cardContainerWidth = constants.dimensions.WINDOW_WIDTH * 0.44;
-const cardContainerHeight = constants.dimensions.WINDOW_HEIGHT * 0.1;
+const cardContainerWidth = dimensions.WINDOW_WIDTH * 0.44;
+const cardContainerHeight = dimensions.WINDOW_HEIGHT * 0.1;
 
 export default function CategoryCarouselItem(props: Props) {
   const category = props.item;

@@ -1,9 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { FlatList, StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
-import constants from '../constants';
+import dimensions from '../constants';
 import globals from '../globals';
-import { cardContainerHeight, cardContainerWidth } from './FavoriteCarouselItem';
 
 interface Props {
   mealImageSource: any
@@ -50,12 +49,12 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 9,
   },
   logoImage: {
-    height: cardContainerHeight * 0.2,
+    height: dimensions.favoriteItemContainerHeight * 0.2,
     marginLeft: 10,
     borderRadius: 2,
   },
   rectangle2: {
-    width: cardContainerWidth * 0.5,
+    width: dimensions.favoriteItemContainerWidth * 0.5,
     marginHorizontal: 20
   }
 });

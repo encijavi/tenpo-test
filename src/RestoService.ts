@@ -35,7 +35,7 @@ const restos:Resto[] = [
         rating: 4.1,
         timeAproxMin: 10,
         timeAproxMax: 60,
-        discount: 60,
+        discount: 0,
         logoImageSource: globals.images.chainLogo.papajohns
     },
 ];
