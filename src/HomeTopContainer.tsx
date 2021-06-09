@@ -6,7 +6,7 @@ import HomeHeader from './components/HomeTopComponents/HomeHeader';
 import HomeMainImage from './components/HomeTopComponents/HomeMainImage';
 import HomeTitle from './components/HomeTopComponents/HomeTitle';
 
-export default function HomeTopView() {
+export default function HomeTopContainer() {
 
   return (
     <View style={styles.container}>

@@ -3,7 +3,7 @@ import React from 'react';
 import { StatusBar, ScrollView, StyleSheet,  View } from 'react-native';
 import AppLoading from 'expo-app-loading';
 import HomeContentContainer from './src/HomeContentContainer';
-import HomeTopView from './src/HomeTopView';
+import HomeTopContainer from './src/HomeTopContainer';
 import globals from './globals';
 
 
@@ -26,7 +26,7 @@ export default function App() {
       <View style={styles.container}>
         <View style={styles.statusBar}/>
         <ScrollView>
-          <HomeTopView />
+          <HomeTopContainer />
           <HomeContentContainer />
         </ScrollView>
       </View>
