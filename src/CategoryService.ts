@@ -14,7 +14,7 @@ const cates:Category[] = [
     },
     {
         id: 3,
-        name: "PIZZA",
+        name: "PIZZAS",
         imageSource: globals.images.cagetory.pizza
     },
 ];

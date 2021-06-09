@@ -38,7 +38,6 @@ export default function FavoriteCarouselItem(props: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
     width: cardContainerWidth,
     height: cardContainerHeight,

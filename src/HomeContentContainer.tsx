@@ -67,17 +67,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   restoCarouselContainer: {
-    //maybe children should be responsible for height
-    height: 200,
-    margin: 10
+    flex:1,
+    marginBottom: 30
   },
   categoryCarouselContainer: {
-    //maybe children should be responsible for height
-    height: 130,
-    margin: 10
+    flex:1,
+    marginBottom: 30
   },
   favoritesCarouselContainer: {
-    flex:1
+    flex:1,
+    marginBottom: 30
   },
   topContainer: {
     height: 300,

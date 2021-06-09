@@ -1,46 +1,60 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { FlatList, StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
+import constants from '../constants';
 import Category from './Category';
-
 
 interface Props {
   item: Category
 }
 
+const cardContainerWidth = constants.dimensions.WINDOW_WIDTH * 0.44;
+const cardContainerHeight = constants.dimensions.WINDOW_HEIGHT * 0.1;
+
 export default function CategoryCarouselItem(props: Props) {
   const category = props.item;
-  
+
   return (
-    <ImageBackground style={styles.background} source={category.imageSource}>
-      <View style={styles.container}>
-        <Text style={styles.name}>
-          {category.name}
-        </Text>
-      </View>
-      <View style={styles.overlay}/>
-    </ImageBackground>
+    <TouchableOpacity activeOpacity={0.7} style={styles.container}>
+      <ImageBackground
+        style={styles.background}
+        source={category.imageSource}
+        resizeMode="stretch">
+        <View style={styles.nameContainer}>
+          <Text style={styles.name}>
+            {category.name}
+          </Text>
+        </View>
+      </ImageBackground>
+    </TouchableOpacity>
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex:1,
-    width: "90%",
+  container:{
+    width: cardContainerWidth,
+    height: cardContainerHeight,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor:'rgba(0,0,0,0.1)',
+  },
+  nameContainer: {
+    width: "98%",
+    height: "98%",
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.1)',
+    borderRadius: 10,
   },
   name: {
-    fontSize: 15,
+    fontSize: 14,
     color: "white",
     letterSpacing: 1.5,
     fontFamily: "Gotham-Bold"
   },
   background: {
-    height: 65,
-    width: 180,
-    justifyContent: "flex-start",
-    alignItems: "center",
+    marginLeft: 10,
+    width: "98%",
+    height: "98%",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

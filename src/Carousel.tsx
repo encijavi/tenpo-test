@@ -1,5 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import constants from '../constants';
 
@@ -31,6 +30,7 @@ export default function Carousel(props: Props) {
         data={content}
         horizontal
         ItemSeparatorComponent={renderSeparator}
+        showsHorizontalScrollIndicator={false}
       />
     </View>
   );
