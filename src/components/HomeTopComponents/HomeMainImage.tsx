@@ -1,7 +1,7 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import dimensions from '../constants';
-import globals from '../globals';
+import { Image, StyleSheet, View } from 'react-native';
+import dimensions from '../../../constants';
+import globals from '../../../globals';
 
 export default function HomeMainImage() {
 

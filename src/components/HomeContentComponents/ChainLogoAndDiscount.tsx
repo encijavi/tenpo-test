@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Image, Text, View } from 'react-native';
-import dimensions from '../constants';
-import globals from '../globals';
+import dimensions from '../../../constants';
+import globals from '../../../globals';
 
 const text = {
   discount: "DCTO"

@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Image, Text, View, TouchableOpacity } from 'react-native';
-import dimensions from '../constants';
+import dimensions from '../../../constants';
+import Resto from '../../model/Resto';
 import ChainLogoAndDiscount from './ChainLogoAndDiscount';
 import Rating from './Rating';
-import Resto from './Resto';
 import TimeAproximate from './TimeAproximate';
 
 interface Props {

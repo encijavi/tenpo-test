@@ -1,14 +1,14 @@
 import GenericModel from "./GenericModel";
 
-export default class Resto extends GenericModel{
+export default class Resto extends GenericModel {
     name: string;
     rating: number;
     timeAproxMin: number;
     timeAproxMax: number;
-    logoImageSource: string;    
+    logoImageSource: string;
     discount: number;
 
-    constructor(object:any){
+    constructor(object: any) {
         super(object);
         this.name = object.name
         this.discount = object.discount;

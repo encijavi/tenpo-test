@@ -1,13 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
-import Carousel from "./Carousel";
-import CategoryCarouselItem from './CategoryCarouselItem';
-import CategoryService from "./CategoryService"
-import FavoriteCarouselItem from './FavoriteCarouselItem';
-import FavoriteService from "./FavoriteService"
-import RestoCarouselItem from './RestoCarouselItem';
-import RestoService from "./RestoService"
+import { StyleSheet, View } from 'react-native';
+import Carousel from "./components/HomeContentComponents/Carousel";
+import CategoryCarouselItem from './components/HomeContentComponents/CategoryCarouselItem';
+import CategoryService from "./service/CategoryService"
+import FavoriteCarouselItem from './components/HomeContentComponents/FavoriteCarouselItem';
+import FavoriteService from "./service/FavoriteService"
+import RestoCarouselItem from './components/HomeContentComponents/RestoCarouselItem';
+import RestoService from "./service/RestoService"
 
 const carousels = {
   resto: "RESTAURANTES",
@@ -35,21 +34,21 @@ export default function HomeContentContainer() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.restoCarouselContainer}>
+      <View style={styles.carouselContainer}>
         <Carousel
           title={carousels.resto}
           content={restos}
           ItemComponent={RestoCarouselItem}
         />
       </View>
-      <View style={styles.categoryCarouselContainer}>
+      <View style={styles.carouselContainer}>
         <Carousel
           title={carousels.category}
           content={categories}
           ItemComponent={CategoryCarouselItem}
         />
       </View>
-      <View style={styles.favoritesCarouselContainer}>
+      <View style={styles.carouselContainer}>
         <Carousel
           title={carousels.favorites}
           content={favorites}
@@ -66,37 +65,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  restoCarouselContainer: {
+  carouselContainer: {
     flex:1,
     marginBottom: 30
-  },
-  categoryCarouselContainer: {
-    flex:1,
-    marginBottom: 30
-  },
-  favoritesCarouselContainer: {
-    flex:1,
-    marginBottom: 30
-  },
-  topContainer: {
-    height: 300,
-    flexDirection: "row"
-  },
-  titleImageContainer: {
-    flex: 2,
-    backgroundColor: 'green',
-    justifyContent: 'center'
-  },
-  titleContainer: {
-    flex: 2,
-    backgroundColor: 'yellow',
-    justifyContent: 'center'
-  },
-  midContainer: {
-    height: 100,
-    width: "100%",
-    backgroundColor: 'lightblue',
-    justifyContent: 'center',
-    alignItems: 'center'
   }
 });

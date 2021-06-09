@@ -1,14 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { FlatList, StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity } from 'react-native';
-import constants from '../constants';
-import globals from '../globals';
-import Favorite from './Favorite';
+import constants from '../../../constants';
+import globals from '../../../globals';
+import Favorite from '../../Favorite';
 import MealAndChain from './MealAndChain';
 import Rating from './Rating';
 import TimeAproximate from './TimeAproximate';
 import CardMealAndChainImage from './CardMealAndChainImage';
-import dimensions from '../constants';
+import dimensions from '../../../constants';
 interface Props {
   item: Favorite
 }

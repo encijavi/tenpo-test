@@ -1,5 +1,5 @@
-import globals from "../globals";
-import Category from "./Category"
+import globals from "../../globals";
+import Category from "../model/Category"
 
 const cates:Category[] = [
     {

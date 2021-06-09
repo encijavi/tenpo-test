@@ -1,12 +1,6 @@
 import React from 'react';
-import { StyleSheet, Image, Text, View } from 'react-native';
-import globals from '../globals';
-import Rating from './Rating';
-import Resto from './Resto';
+import { StyleSheet, Text } from 'react-native';
 
-const text = {
-  discount: "DCTO"
-}
 interface Props {
   min: number;
   max: number;

@@ -1,7 +1,7 @@
-import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import dimensions from '../constants';
-import globals from '../globals';
+import React from 'react'
+import { Image, StyleSheet, TouchableOpacity, View } from 'react-native';
+import dimensions from '../../../constants';
+import globals from '../../../globals';
 
 export default function HomeHeader() {
 

@@ -2,7 +2,6 @@ import { useFonts } from 'expo-font';
 import React from 'react';
 import { StatusBar, ScrollView, StyleSheet,  View } from 'react-native';
 import AppLoading from 'expo-app-loading';
-import Carousel from "./src/Carousel";
 import HomeContentContainer from './src/HomeContentContainer';
 import HomeTopView from './src/HomeTopView';
 import globals from './globals';

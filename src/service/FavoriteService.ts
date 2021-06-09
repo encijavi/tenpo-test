@@ -1,5 +1,5 @@
-import globals from "../globals";
-import Favorite from "./Favorite"
+import globals from "../../globals";
+import Favorite from "../model/Favorite";
 
 const favs:Favorite[] = [
     {

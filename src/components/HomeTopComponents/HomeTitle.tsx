@@ -1,6 +1,6 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import globals from '../globals';
+import { StyleSheet, Text, View } from 'react-native';
+import globals from '../../../globals';
 
 export default function HomeTitle() {
 

@@ -1,11 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { FlatList, StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
-import constants from '../constants';
-import globals from '../globals';
-import Favorite from './Favorite';
-import Rating from './Rating';
-import TimeAproximate from './TimeAproximate';
+import { StyleSheet, Text, View} from 'react-native';
+import globals from '../../../globals';
+
 
 interface Props {
   mealName: string

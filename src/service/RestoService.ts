@@ -1,5 +1,5 @@
-import globals from "../globals";
-import Resto from "./Resto"
+import globals from "../../globals";
+import Resto from "../model/Resto";
 
 const restos:Resto[] = [
     {

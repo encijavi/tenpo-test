@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
-import dimensions from '../constants';
+import dimensions from '../../../constants';
 
 interface Props {
   content: any[],

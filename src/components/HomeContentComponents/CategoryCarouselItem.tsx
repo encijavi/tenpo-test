@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
-import dimensions from '../constants';
-import Category from './Category';
+import dimensions from '../../../constants';
+import Category from '../../model/Category';
 
 interface Props {
   item: Category

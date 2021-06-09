@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { FlatList, StyleSheet, Text, View, ImageBackground, Image } from 'react-native';
-import dimensions from '../constants';
-import globals from '../globals';
+import dimensions from '../../../constants';
+import globals from '../../../globals';
 
 interface Props {
   mealImageSource: any

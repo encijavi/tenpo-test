@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import globals from '../globals';
+import globals from '../../../globals';
 
 export default function AddDirectionButton() {
 
