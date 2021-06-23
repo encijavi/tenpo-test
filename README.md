@@ -1,6 +1,8 @@
 # Tenpo tech evaluation mock app
 
 This is a test react native android app consisting of a single view, mock and assets were taken from [here](https://xd.adobe.com/view/f54f4021-662d-463e-62df-5f9bcfd1b411-837e)
+shared apk: https://i.diawi.com/hvA3qR
+![video](https://media.giphy.com/media/VT6NuYZ9PB4cB2ohIw/source.gif)
 
 ## Some of the things i took into special consideration
 
@@ -12,7 +14,6 @@ This is a test react native android app consisting of a single view, mock and as
 - Visual bug on restaurant carousel items press opacity animation
 - Adding a navigator layout and a simple "add direction" screen
 - Adding an motorbike animation 
-
 
 ## Installation
 
